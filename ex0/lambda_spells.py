@@ -15,3 +15,4 @@ def mage_stats(mages: list[dict]) -> dict:
         'min_power' : min(powers),
         'avg_power' : round(sum(powers) / len(powers), 2),
     }
+ 2:23
