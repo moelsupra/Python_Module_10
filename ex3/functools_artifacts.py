@@ -71,6 +71,7 @@ if __name__ == "__main__":
         print(f"  Error: {e}")
 
     print("\nTesting partial enchanter...")
+
     def base_enchantment(power: int, element: str, target: str) -> str:
         return f"{element} enchantment on {target} with {power} power"
     try:
