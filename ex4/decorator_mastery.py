@@ -19,7 +19,8 @@ def power_validator(min_power: int) -> Callable:
     def decorator(func: Callable) -> Callable:
         @wraps(func)
         def wrapper(*args, **kwargs):
-            if args[0] >= min_power:
+            power = next((arg for arg in args if isinstance(arg, int)), 0)
+            if power >= min_power:
                 return func(*args, **kwargs)
             return "Insufficient power for this spell"
         return wrapper

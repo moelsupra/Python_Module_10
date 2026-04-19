@@ -76,6 +76,7 @@ if __name__ == "__main__":
         return f"{element} enchantment on {target} with {power} power"
     try:
         enchanters = partial_enchanter(base_enchantment)
+        print(f"Type check: {type(enchanters['fire_enchant'])}")
         for enchant in enchanters.values():
             print(f"{enchant('Sword')}")
     except Exception as e:
