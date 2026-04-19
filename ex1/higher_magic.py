@@ -42,6 +42,10 @@ if __name__ == "__main__":
     print("\nTesting power amplifier...")
     mega = power_amplifier(fireball, 3)
     print(f"Original: 10, Amplified: {mega('Dragon', 10)}")
+    giga = power_amplifier(fireball, 8)
+    print(f"Original: 5, Amplified: {giga('Ghost', 5)}")
+    double = power_amplifier(fireball, 2)
+    print(f"Double amplified: {double('Dragon', 10)}")
 
     print("\nTesting conditional caster...")
     strong_enough = conditional_caster(

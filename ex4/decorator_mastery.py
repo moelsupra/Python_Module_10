@@ -10,7 +10,7 @@ def spell_timer(func: Callable) -> Callable:
         start = time.time()
         result = func(*args, **kwargs)
         end = time.time()
-        print(f"Spell completed in {end - start:.3f} seconds")
+        print(f"Spell completed in {end - start:.8f} seconds")
         return result
     return wrapper
 
@@ -61,7 +61,7 @@ if __name__ == "__main__":
     @spell_timer
     def fireball(target: str, power: int) -> str:
         time.sleep(0.1)
-        return f"Fireball cast on {target}!"
+        return f"Fireball cast on {target} -> {power}!"
 
     result = fireball("Dragon", 10)
     print(f"Result: {result}")
@@ -71,13 +71,11 @@ if __name__ == "__main__":
     @retry_spell(max_attempts=3)
     def unstable_spell() -> str:
         raise Exception("Spell unstable!")
-
-    print(retry_spell(max_attempts=3)(unstable_spell)())
+    print(unstable_spell())
 
     @retry_spell(max_attempts=3)
     def lucky_spell() -> str:
         return "Waaaaaaagh spelled !"
-
     print(lucky_spell())
 
     print("\nTesting MageGuild...")
